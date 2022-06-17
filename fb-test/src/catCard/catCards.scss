@@ -1,0 +1,137 @@
+@import "src/global/variables";
+
+.catCards {
+  display: flex;
+  gap: 80px;
+  color: black;
+
+  &__wrap {
+    position: relative;
+    background-color: $white;
+    border-radius: 12px;
+
+    &_clip {
+      clip-path: polygon(
+                      0% 44px, /* верхняя левая */
+                      44px 0%, /* верхняя левая */
+                      100% 0%, /* верхняя правая */
+                      100% 5%, /* верхняя правая */
+                      100% 95%, /* нижняя правая */
+                      100% 100%, /* нижняя правая */
+                      0% 100%, /* нижняя левая */
+                      0 100% /* нижняя левая */
+      );
+    }
+  }
+
+  &__card {
+    box-sizing: border-box;
+    padding: 16px 44px;
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    width: 320px;
+    height: 480px;
+
+    border-radius: 12px;
+    overflow: hidden;
+    border: 4px solid $default;
+
+    &::before {
+      content: "";
+z-index: -1;
+      width: 320px;
+      height: 272px;
+      position: absolute;
+      bottom: 0;
+      left:0;
+      background: url("img/cat.png");
+      border-radius: 12px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -29px;
+      left: -29px;
+      width: 60px;
+      height: 60px;
+      border-right: 4px solid $default;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-top: 2px;
+    font-weight: 700;
+    font-size: 48px;
+  }
+
+  &__subtitle {
+    padding: 0 0 14px 4px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  &__text {
+    margin: 0;
+    padding: 2px 4px;
+    color: $gray;
+    font-weight: 400;
+    font-size: 14px;
+
+    &_top {
+      font-size: 16px;
+    }
+  }
+
+  &__subtext {
+    display: flex;
+    padding-top: 14px;
+    justify-content: center;
+    color: $white;
+    font-size: 13px;
+    line-height: 15px;
+
+    span {
+      color: $default;
+      border-bottom: 1px dashed $default;
+    }
+  }
+
+
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 12px;
+  }
+
+  &__circle {
+    position: absolute;
+    z-index: 1;
+    box-sizing: border-box;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: $default;
+    color: $white;
+    font-size: 42px;
+    line-height: 22px;
+    border-radius: 100%;
+    right: 16px;
+    bottom: 16px;
+
+    span {
+      padding-top: 8px;
+      font-size: 21px;
+    }
+  }
+
+}
