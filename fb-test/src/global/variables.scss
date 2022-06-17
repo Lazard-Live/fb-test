@@ -6,3 +6,7 @@ $disabled: #979797;
 $black: #000;
 $gray: #666;
 $white: #FFF;
+
+%transition {
+  transition: 0.15s ease;
+}
